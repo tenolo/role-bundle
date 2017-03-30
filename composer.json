@@ -29,8 +29,8 @@
         "symfony/config": "~2.8|~3.0",
         "symfony/dependency-injection": "~2.8|~3.0",
 
-        "tenolo/core-bundle": "~2.0",
-        "tenolo/entity-bundle": "~2.0"
+        "tenolo/core-bundle": "~3.0",
+        "tenolo/entity-bundle": "~3.0"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "~2.8|~3.0"
@@ -53,6 +53,7 @@
     },
     "extra": {
         "branch-alias": {
+            "dev-release/3.0": "3.0-dev",
             "dev-release/2.0": "2.0-dev"
         }
     },
