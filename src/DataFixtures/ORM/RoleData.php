@@ -53,10 +53,25 @@ class RoleData extends AbstractFixture
             $manager->persist($adminGroup);
         }
 
+        /** @var RoleInterface $adminGroup */
+        $superAdminGroup = $repo->findOneBy([
+            'internalName' => 'ROLE_SUPER_ADMIN'
+        ]);
+
+        if (!$superAdminGroup) {
+            $superAdminGroup = $repo->createNew();
+            $superAdminGroup->setName('Super Admin');
+            $superAdminGroup->setInternalName('ROLE_SUPER_ADMIN');
+            $superAdminGroup->setPriority(10);
+            $superAdminGroup->setDeletable(false);
+            $manager->persist($superAdminGroup);
+        }
+
         $manager->flush();
 
         $this->addReference('role-user', $userGroup);
         $this->addReference('role-admin', $adminGroup);
+        $this->addReference('role-super-admin', $adminGroup);
     }
 
 }
