@@ -29,7 +29,7 @@ class Role extends AbstractRole implements RoleInterface
 
     /**
      * @var ArrayCollection|PersistentCollection|UserGroupInterface[]
-     * @ORM\ManyToMany(targetEntity="Tenolo\Bundle\UserBundle\Entity\Plan\UserGroupInterface", mappedBy="roles", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Tenolo\Bundle\UserBundle\Entity\Plan\UserGroupInterface", mappedBy="userRoles", cascade={"persist"})
      */
     protected $userGroups;
 
