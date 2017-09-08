@@ -32,9 +32,6 @@
         "tenolo/core-bundle": "~2.0",
         "tenolo/entity-bundle": "~2.0"
     },
-    "require-dev": {
-        "symfony/phpunit-bridge": "~2.8|~3.0"
-    },
     "repositories": [
         {
             "type": "composer",
