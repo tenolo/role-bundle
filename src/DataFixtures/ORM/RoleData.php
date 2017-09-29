@@ -2,8 +2,10 @@
 
 namespace Tenolo\Bundle\RoleBundle\DataFixtures\ORM;
 
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Tenolo\Bundle\CoreBundle\DataFixtures\ORM\AbstractFixture;
 use Tenolo\Bundle\EntityBundle\Repository\Interfaces\BaseEntityRepositoryInterface;
 use Tenolo\Bundle\RoleBundle\Entity\Interfaces\RoleInterface;
 
@@ -14,8 +16,16 @@ use Tenolo\Bundle\RoleBundle\Entity\Interfaces\RoleInterface;
  * @author  Nikita Loges
  * @company tenolo GbR
  */
-class RoleData extends AbstractFixture
+class RoleData extends AbstractFixture implements FixtureInterface, OrderedFixtureInterface
 {
+
+    /**
+     * @inheritDoc
+     */
+    public function getOrder()
+    {
+        return 1;
+    }
 
     /**
      * @inheritDoc
@@ -23,7 +33,7 @@ class RoleData extends AbstractFixture
     public function load(ObjectManager $manager)
     {
         /** @var BaseEntityRepositoryInterface $repo */
-        $repo = $this->findRepository(RoleInterface::class);
+        $repo = $manager->getRepository(RoleInterface::class);
 
         /** @var RoleInterface $userGroup */
         $userGroup = $repo->findOneBy([
