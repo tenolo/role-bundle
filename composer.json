@@ -30,7 +30,7 @@
         "symfony/dependency-injection": "~2.8|~3.0",
 
         "tenolo/core-bundle": "~3.0",
-        "tenolo/entity-bundle": "~3.0"
+        "tenolo/entity-bundle": "~1.0"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "~2.8|~3.0"
