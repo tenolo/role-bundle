@@ -11,7 +11,7 @@ use Tenolo\Bundle\RoleBundle\Entity\Interfaces\AbstractRoleInterface;
  * @package Tenolo\Bundle\RoleBundle\Repository
  * @author  Nikita Loges
  */
-class AbstractRoleRepository extends BaseEntityRepository
+abstract class AbstractRoleRepository extends BaseEntityRepository
 {
 
     /**

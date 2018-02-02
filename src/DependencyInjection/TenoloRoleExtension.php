@@ -2,10 +2,8 @@
 
 namespace Tenolo\Bundle\RoleBundle\DependencyInjection;
 
-use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
-use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 use Tenolo\Bundle\RoleBundle\Entity\Entities\Role;
 use Tenolo\Bundle\RoleBundle\Entity\Interfaces\RoleInterface;
@@ -25,8 +23,6 @@ class TenoloRoleExtension extends ConfigurableExtension implements PrependExtens
      */
     public function loadInternal(array $config, ContainerBuilder $container)
     {
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('services.yml');
     }
 
     /**

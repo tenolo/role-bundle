@@ -16,7 +16,7 @@ use Tenolo\Bundle\UserBundle\Entity\Plan\UserInterface;
  * @author  Nikita Loges
  * @company tenolo GbR
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Tenolo\Bundle\RoleBundle\Repository\RoleRepository")
  */
 class Role extends AbstractRole implements RoleInterface
 {

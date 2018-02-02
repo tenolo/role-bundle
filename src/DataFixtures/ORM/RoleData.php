@@ -72,7 +72,7 @@ class RoleData extends AbstractFixture implements FixtureInterface, OrderedFixtu
             $superAdminGroup = $repo->createNew();
             $superAdminGroup->setName('Super Admin');
             $superAdminGroup->setInternalName('ROLE_SUPER_ADMIN');
-            $superAdminGroup->setPriority(10);
+            $superAdminGroup->setPriority(100);
             $superAdminGroup->setDeletable(false);
             $manager->persist($superAdminGroup);
         }

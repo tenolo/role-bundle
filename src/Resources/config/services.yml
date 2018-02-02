@@ -1,6 +1,0 @@
-services:
-
-#    # slugification
-#    tenolo_slugify.slugification:
-#        class: Tenolo\Bundle\RoleBundle\Slugification\SlugificationDelegator
-#        arguments: ["@service_container", "@slugify", "tenolo_slugify.slugger.default"]

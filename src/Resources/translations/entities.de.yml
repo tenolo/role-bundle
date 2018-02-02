@@ -1,9 +1,0 @@
-role:
-    article:
-        singular: Die
-        plural: Die
-    object:
-        singular: Rolle
-        plural: Rollen
-    list: Rollen auflisten
-    add: Rolle hinzufügen
