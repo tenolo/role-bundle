@@ -3,9 +3,9 @@
 namespace Tenolo\Bundle\RoleBundle\Form\Type\Entities;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Tenolo\Bundle\CoreBundle\Form\Type\AbstractType;
 use Tenolo\Bundle\RoleBundle\Entity\Entities\Role;
 use Tenolo\Bundle\RoleBundle\Entity\Interfaces\RoleInterface;
 
@@ -30,11 +30,11 @@ class RoleEntityType extends AbstractType
             },
             'class'        => Role::class,
             'choice_label' => function (RoleInterface $value, $key, $index) {
-                if(!$value->getInternalName()) {
+                if (!$value->getInternalName()) {
                     return $this->getName();
                 }
 
-                return $value->getName().' ('.$value->getInternalName().')';
+                return $value->getName() . ' (' . $value->getInternalName() . ')';
             },
         ]);
     }

@@ -23,7 +23,7 @@ class TenoloRoleExtension extends ConfigurableExtension implements PrependExtens
     /**
      * @inheritdoc
      */
-    public function loadInternal(array $configs, ContainerBuilder $container)
+    public function loadInternal(array $config, ContainerBuilder $container)
     {
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
