@@ -3,8 +3,6 @@
 namespace Tenolo\Bundle\RoleBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
-use Doctrine\Common\DataFixtures\FixtureInterface;
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Tenolo\Bundle\EntityBundle\Repository\Interfaces\BaseEntityRepositoryInterface;
 use Tenolo\Bundle\RoleBundle\Entity\Interfaces\RoleInterface;
@@ -16,16 +14,8 @@ use Tenolo\Bundle\RoleBundle\Entity\Interfaces\RoleInterface;
  * @author  Nikita Loges
  * @company tenolo GbR
  */
-class RoleData extends AbstractFixture implements FixtureInterface, OrderedFixtureInterface
+class RoleData extends AbstractFixture
 {
-
-    /**
-     * @inheritDoc
-     */
-    public function getOrder()
-    {
-        return 1;
-    }
 
     /**
      * @inheritDoc
@@ -37,7 +27,7 @@ class RoleData extends AbstractFixture implements FixtureInterface, OrderedFixtu
 
         /** @var RoleInterface $userGroup */
         $userGroup = $repo->findOneBy([
-            'internalName' => 'ROLE_USER'
+            'internalName' => 'ROLE_USER',
         ]);
 
         if (!$userGroup) {
@@ -51,7 +41,7 @@ class RoleData extends AbstractFixture implements FixtureInterface, OrderedFixtu
 
         /** @var RoleInterface $adminGroup */
         $adminGroup = $repo->findOneBy([
-            'internalName' => 'ROLE_ADMIN'
+            'internalName' => 'ROLE_ADMIN',
         ]);
 
         if (!$adminGroup) {
@@ -65,7 +55,7 @@ class RoleData extends AbstractFixture implements FixtureInterface, OrderedFixtu
 
         /** @var RoleInterface $adminGroup */
         $superAdminGroup = $repo->findOneBy([
-            'internalName' => 'ROLE_SUPER_ADMIN'
+            'internalName' => 'ROLE_SUPER_ADMIN',
         ]);
 
         if (!$superAdminGroup) {
